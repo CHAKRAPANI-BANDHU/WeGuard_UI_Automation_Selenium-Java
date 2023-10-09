@@ -30,13 +30,15 @@ public class Login extends BaseClass {
 		test.info(pv);
 		
 		lp.setUserId("chakrapani.bandhu@weguard.com");
-//		lp.setUserId(System.getenv("WEGUARD_USERNAME"));
 		test.info("Entered User ID");
+//		lp.setUserId(System.getenv("WEGUARD_USERNAME"));
 		lp.setPassword("Wenable@473");
 //		lp.setPassword(System.getenv("WEGUARD_PASSWORD"));
 		test.info("Entered Password");
 		lp.rememberMe(("RememberMe"));
 		lp.clickLogin();
+        // Maximize the browser window
+        driver.manage().window().maximize();
 		Thread.sleep(8000);
 		if (driver.getCurrentUrl().equals("https://qa-cloud.weguard.io/#/dashboard"))
 		{

@@ -22,61 +22,60 @@ public class Reports extends Login {
 		ExtentTest test = extent.createTest("Reports_Testcases").assignAuthor("QA_Wenable").assignDevice("Chrome");
 		logger.info("Navigating to the Reports page");
 		ReportsPage rp = new ReportsPage(driver, test, logger);
-		ReportsPage rp2=rp;
 		try {
-			WebElement reports = rp2.getReportsURL();
+			WebElement reports = rp.getReportsURL();
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 			wait.until(ExpectedConditions.elementToBeClickable(reports));
 			test.info("Reports page is launched");
 			Thread.sleep(10000);
 			test.info("Executing Reports Test cases");
 			logger.info("Executing Reports Test cases");
-			test.info(("The no. of report types present in this account are: ") + rp2.getTotalReports());
+			test.info(("The no. of report types present in this account are: ") + rp.getTotalReports());
 
 // 1. WeGuard Version Distribution Reports
 
 			try {
 				logger.info("Executing WeGuard Version Distribution Reports Test cases");
 				test.info("WeGuard Version Distribution Reports is displayed in this account.");
-				rp2.getWVDRReports();
+				rp.getWVDRReports();
 
 				// Cache the Report Information and wait for 8 seconds
 				test.info("Please wait while we cache the devices");
 				Thread.sleep(8000);
-				rp2.getWVDRSubTitle();
+				rp.getWVDRSubTitle();
 				// Get title name, toast message and wait for 5 seconds
-				rp2.getWVDRTitle();
+				rp.getWVDRTitle();
 				test.info("Devices are cached, you can try reports now");
 				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
 				// After caches the devices, click on the WeGuard Version Distribution Reports
 				// and wait for 8 seconds
-				rp2.getCacheDevice();
+				rp.getCacheDevice();
 				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
 
 				// Display of pie-chart and wait for 10 seconds
-				rp2.getPieChartInfo();
+				rp.getPieChartInfo();
 				
 				// Verifying column headers in tabular data
-				rp2.getColumnHeaderOfWVDR();
+				rp.getColumnHeaderOfWVDR();
 
 				// Column Names in a row
-				rp2.getHeaderRows();
+				rp.getHeaderRows();
 				
 				// Print all the Devices with WeGuard App Versions
-				rp2.getRows();
+				rp.getRows();
 
 				// Download Reports options
-				rp2.getDownloadReports();
+				rp.getDownloadReports();
 				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
-				rp2.getDownload();
+				rp.getDownload();
 
 				// Devices State Drop-down
-				rp2.getDevicesStateDropdown();
-				rp2.getDevicesStateDropdownOptions();
+				rp.getDevicesStateDropdown();
+				rp.getDevicesStateDropdownOptions();
 
 				// Navigating to Reports page from WeGuard distribution page
-				rp2.getClickBackArrowIcon();
+				rp.getClickBackArrowIcon();
 				Thread.sleep(3000);
 				
 			} catch (NoSuchElementException e) {
@@ -91,24 +90,24 @@ public class Reports extends Login {
 			try {
 				logger.info("Executing Devices Enrollment Reports Test cases");
 				test.info("Device Enrollment Reports is displayed in this account.");
-				rp2.getDERReports();
+				rp.getDERReports();
 				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
 				// Display of pie chart
-				rp2.getPieChartInfo();
+				rp.getPieChartInfo();
 
 				// Verifying column headers in tabular data
-				rp2.getColumnHeaderOfDER();
+				rp.getColumnHeaderOfDER();
 
 				// Column Names in a row
-				rp2.getHeaderRows();
+				rp.getHeaderRows();
 
 				// Find all the mat-row elements inside the element
-				rp2.getRows();
+				rp.getRows();
 
 				// Download button is present or not in Device enrollment reports
-				rp2.getDownloadReports();
-				rp2.getDownload();					
+				rp.getDownloadReports();
+				rp.getDownload();					
 
 				// Filter by group names field
 				try {
@@ -120,11 +119,11 @@ public class Reports extends Login {
 				}
 				
 				// Devices State Drop-down
-				rp2.getDevicesStateDropdown();
-				rp2.getDevicesStateDropdownOptions();
+				rp.getDevicesStateDropdown();
+				rp.getDevicesStateDropdownOptions();
 
 				// Navigating to Reports page from Devices Enrollment Reports page
-				rp2.getClickBackArrowIcon();
+				rp.getClickBackArrowIcon();
 				
 			} catch (NoSuchElementException e) {
 				test.fail(e);
@@ -616,7 +615,7 @@ public class Reports extends Login {
 						MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 			}
 			// Navigating back to Reports page
-			rp2.getClickBackArrowIcon();
+			rp.getClickBackArrowIcon();
 			Thread.sleep(2000);
 		}catch(
 

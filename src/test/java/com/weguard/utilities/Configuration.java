@@ -23,13 +23,5 @@ public class Configuration {
 		return chromepath;
 	}
 	
-	public String getEmailConfig() {
-		String emailconfig = pro.getProperty("email-config.json");
-		return emailconfig;
-	}
-//	public String getEdgepath() {
-//		String edgepath = pro.getProperty("edgepath");
-//		return edgepath;
-//	}
 	
 }

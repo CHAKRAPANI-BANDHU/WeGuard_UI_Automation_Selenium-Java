@@ -45,8 +45,8 @@ public class AuditLogs extends Login {
 				test.fail("Refresh button is not displayed in Audit Logs page");
 			}
 			
-			// Filter by Log level
-			driver.findElement(By.xpath("//*[@aria-label='Filter by log level']")).click();
+			// Filter by Log level   
+			driver.findElement(By.xpath("//div[@id='mat-select-value-333']")).click();
 			Thread.sleep(2000);
 			String[] expected_f1 = { "ALL", "Info", "Warn", "Debug", "Error" };
 			List<WebElement> actual_f1 = driver.findElements(By.xpath("//*[@class='mat-option-text']"));
@@ -64,7 +64,7 @@ public class AuditLogs extends Login {
 				}
 			}
 			// Filter by events
-			WebElement f2 = driver.findElement(By.xpath("//*[@aria-label='Filter by events']"));
+			WebElement f2 = driver.findElement(By.xpath("//div[@id='mat-select-value-335']"));
 			Actions act = new Actions(driver);
 			act.moveToElement(f2).click().perform();
 			f2.click();

@@ -84,11 +84,11 @@ public class DashboardPage {
 	@CacheLookup
 	WebElement CallsCount;
 	
-	@FindBy(xpath = "(//*[@class='chartjs-render-monitor'])[1]")
+	@FindBy(xpath = "//p-chart[@type='pie']//div//canvas")
 	@CacheLookup
 	WebElement DevicesStatusPieChart;
 	
-	@FindBy(xpath = "(//*[@class='chartjs-render-monitor'])[2]")
+	@FindBy(xpath = "//p-chart[@type='bar']//div//canvas")
 	@CacheLookup
 	WebElement DevicesCheckinBarGraph;
 	

@@ -106,6 +106,7 @@ public class BaseClass {
 		extent.setSystemInfo("Environment", "QA");
 		extent.setSystemInfo("URL", "https://qa-cloud.weguard.io/#/");
 		extent.setSystemInfo("Reporter", "Chakrapani Bandhu");
+		extent.setSystemInfo("Designation", "QA Engineer");
 		spark.config().setDocumentTitle("WeGuard Automation Test Report"); 																	
 		spark.config().setReportName("QA Test Report"); 
 		spark.config().setTheme(Theme.STANDARD);
